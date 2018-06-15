@@ -1,0 +1,23 @@
+package com.example.service.impl;
+
+import com.alibaba.fastjson.JSON;
+import com.example.entity.example.UserInfoExample;
+import com.example.mapper.UserInfoMapper;
+import com.example.service.IUserInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserInfoServiceImpl implements IUserInfoService {
+
+    @Autowired
+    private UserInfoMapper userMapper;
+
+   @Override
+    public String selectByExample() {
+       UserInfoExample example=new UserInfoExample();
+       example.createCriteria().andIdEqualTo(1);
+       String result= JSON.toJSONString(userMapper.selectByExample(example));
+        return result;
+    }
+}
