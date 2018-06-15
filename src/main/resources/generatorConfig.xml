@@ -43,12 +43,12 @@
         </jdbcConnection>
 
         <!-- 生成bean和example对象 -->
-        <javaModelGenerator targetPackage="com.example.entity.example" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.example.generator.entity" targetProject="src/main/java"/>
 
         <!-- 生成mapper.xml类 -->
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+        <sqlMapGenerator targetPackage="mapper.generator" targetProject="src/main/resources" />
         <!-- 生成DAO的类文件以及配置文件 -->
-        <javaClientGenerator targetPackage="com.example.mapper"  targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.example.generator.mapper"  targetProject="src/main/java" type="XMLMAPPER">
         <!--是否允许建立子包（对应MySql的scheme）-->
         <property name="enableSubPackages" value="true"></property>
         </javaClientGenerator>

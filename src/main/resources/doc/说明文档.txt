@@ -1,0 +1,19 @@
+
+
+src/main/resources/doc/sql    项目所需建表语句
+
+src/main/resources/application.properties   springboot的配置文件
+
+
+
+1、启动项目前，请将application.properties数据库相关配置改为自己的数据库
+
+2、项目结构
+
+com.example.generator:
+        1、generator逆向生成工具自动生成的所有文件不要进行改动，比如mapper里面没有满足需求的方法，这时可以重新写一个mapperExp
+           的扩展mapper去继承自动生成的mapper，因为如果表结构有改动，就需要重新生成mapper这时候就会覆盖原来的自动生成的mapper
+        2、generator逆向生成工具，省去了基本的增删改查的mapper文件及sql的编写
+        3、generator搭建使用方法请参考 https://github.com/shaohuabaishuo/document 的html格式文档中的(spring集成mybatis-generator)
+
+
